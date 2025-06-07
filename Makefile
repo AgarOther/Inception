@@ -2,7 +2,7 @@ all:
 	@mkdir -p /home/scraeyme/data/mariadb
 	@mkdir -p /home/scraeyme/data/nginx
 	@mkdir -p /home/scraeyme/data/wordpress
-	@docker compose -f srcs/docker-compose.yml up -d --build
+	@docker compose -f srcs/docker-compose.yml up -d
 
 stop:
 	@docker compose -f srcs/docker-compose.yml down
