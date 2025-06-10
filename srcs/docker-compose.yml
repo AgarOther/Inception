@@ -26,6 +26,8 @@ services:
       - wordpress
     ports:
       - "443:443"
+    env_file:
+      - .env
     restart: on-failure
   mariadb:
     container_name: mariadb
@@ -34,8 +36,6 @@ services:
       - inception
     volumes:
       - mariadb:/var/lib/mysql
-    expose:
-      - "3306"
     env_file:
       - .env
     restart: on-failure
@@ -50,8 +50,6 @@ services:
       - mariadb
     env_file:
       - .env
-    expose:
-      - "9000"
     restart: on-failure
 
 networks:
